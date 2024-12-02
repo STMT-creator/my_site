@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title %></title>
+    <title>
+        <%= locals.title %>
+    </title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header class="header d-flex space-between">  <!--페이지 공통 헤더-->
+    <header class="header d-flex space-between"> <!--페이지 공통 헤더-->
         <nav class="header__nav">
             <ul class="d-flex gap-1">
                 <li>
@@ -21,15 +25,22 @@
                 </li>
             </ul>
         </nav>
-        <div class="header__logo"><%= locals.header %></div>
+        <div class="header__logo">
+            <%= locals.header %>
+        </div>
         <div class="header__btn"><button>Buy Now</button></div>
     </header>
-    <div class="container">
-        <!-- <h1><%= locals.header %></h1> -->
-        <%- body %>
+    <div class="hero">
+        <img src="/images/hero-title.jpg" alt="사이트 이미지">
     </div>
-    <footer> <!--페이지 공통 루터-->
-        <div class="footer__top">
+    <main class="main">
+        <div class="container">
+            <!-- <h1><%= locals.header %></h1> -->
+            <%- body %>
+        </div>
+    </main>
+    <footer class="footer"> <!--페이지 공통 루터-->
+        <div class="footer__top d-flex space-between">
             <div class="copy">
                 <p>&copy; 2024 My Site</p>
             </div>
@@ -40,13 +51,40 @@
                 <button>Purchase now</button>
             </div>
         </div>
-        <hr>  <!-- hr은 선그리기-->
-        <div class="footer__bottom">
-            <div class="footer__logo"></div>
+        <hr> <!-- hr은 선그리기-->
+        <div class="footer__bottom d-flex space-between">
+            <!-- <div class="footer__logo"></div> -->
             <nav class="footer__nav">
-
+                <ul class="d-flex gap-1">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="footer__icons">
+                <ul class="d-flex gap-1">
+                    <li>
+                        <a href="#">facebook</a>
+                    </li>
+                    <li>
+                        <a href="#">twitter</a>
+                    </li>
+                    <li>
+                        <a href="#">youtube</a>
+                    </li>
+                    <li>
+                        <a href="#">instargram</a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </footer>
 </body>
+
 </html>

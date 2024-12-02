@@ -4,6 +4,7 @@
     --secondary-text-color: #ffffff;
     --primary-bg-color: #f1f1f1;
     --secondary-bg-color: #111247;
+    --third-bg-color: #E7ECFF;
 }
 
 *,
@@ -73,9 +74,21 @@ a, a:link {
 .header__btn {
     order: 2;
 }
-.header__btn button {
+.header__btn button, .buy__now button {
     color: var(--secondary-text-color);
     background-color: var(--secondary-bg-color);
     width: 8rem;
     height: 1.3rem;
+}
+
+.hero img {
+    width: 100%;
+    object-fit: cover;
+}
+.footer {
+    background-color: var(--third-bg-color);
+    padding: 1rem;
+}
+.footer hr {
+    margin: 1rem 0;
 }
