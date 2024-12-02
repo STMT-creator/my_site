@@ -80,10 +80,15 @@ a, a:link {
     width: 8rem;
     height: 1.3rem;
 }
+.hero {
+    height: 20rem;
+    overflow: hidden;
+}
 
 .hero img {
     width: 100%;
     object-fit: cover;
+    margin-top: -20rem;
 }
 .footer {
     background-color: var(--third-bg-color);
@@ -91,4 +96,11 @@ a, a:link {
 }
 .footer hr {
     margin: 1rem 0;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--primary-text-color);
 }
