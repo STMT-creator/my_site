@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><$=title%></title>
+    <title><%= locals.title %></title>
 </head>
 <body>
+    <header>  <!--페이지 공통 헤더-->
+        <div class="header__logo"><%= locals.header %></div>
+        <nav class="header__nav">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div><button>Buy Now</button></div>
+    </header>
     <div class="container">
-        <h1><%=description%></h1>
+        <h1><%= locals.header %></h1>
+        <!-- <%- body %> -->
     </div>
+    <footer> <!--페이지 공통 루터-->
+        <div class="footer__top">
+            <div class="copy">
+                <p>&copy; 2024 My Site</p>
+            </div>
+            <div class="brand">
+                Developer's Guide
+            </div>
+            <div class="buy__now">
+                <button>Purchase now</button>
+            </div>
+        </div>
+        <hr>  <!-- hr은 선그리기-->
+        <div class="footer__bottom">
+            <div class="footer__logo"></div>
+            <nav class="footer__nav">
+
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>
