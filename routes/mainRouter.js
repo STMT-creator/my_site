@@ -1,11 +1,16 @@
 const express = require('express')
 const router = express.Router();
-const commonLayout = require("../views/layouts/common.ejs");
+const mainLayout = "../views/layouts/common.ejs";
 
-router.get(["/", "/home"], (req, res) => {
+router.get('/', (req, res) => {
+  // res.render('index', {
+  //   layout: mainLayout,
+  //   title: 'My Site',
+  //   header: 'Special Header'
+  // });
   const locals = {
-    title: "홈",
-    header: "home page",
+    title: "My Site",
+    header: "Special Header",
   };
   res.render("index", {
     locals: locals,
