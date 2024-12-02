@@ -74,7 +74,7 @@ a, a:link {
 .header__btn {
     order: 2;
 }
-.header__btn button, .buy__now button {
+.header__btn button, .buy button {
     color: var(--secondary-text-color);
     background-color: var(--secondary-bg-color);
     width: 8rem;
@@ -96,6 +96,9 @@ a, a:link {
 }
 .footer hr {
     margin: 1rem 0;
+    border: 0;
+    height: 1px;
+    background-color: var(--primary-text-color);
 }
 
 .brand {
@@ -103,4 +106,10 @@ a, a:link {
     font-size: 1rem;
     letter-spacing: 1px;
     color: var(--primary-text-color);
+}
+
+.main .container {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
 }
