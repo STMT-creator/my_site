@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
   //   header: 'Special Header'
   // });
   const locals = {
-    title: "My Site",
-    header: "Special Header",
+    title: "Beginner STMT",
+    header: "Web Developer's Tip/Knowhow",
   };
   res.render("index", {
     locals: locals,
