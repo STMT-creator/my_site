@@ -9,7 +9,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.set('layout', 'layouts/main');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/", mainRouter);
 
 
