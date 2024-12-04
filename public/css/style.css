@@ -76,7 +76,9 @@ a, a:link {
 .text_small {
     font-size: .5rem;
 }
-
+.link-text:hover {
+    color: var(--primary-text-color);
+}
 
 
 
@@ -120,11 +122,36 @@ a, a:link {
     font-weight: normal;
 }
 #admin.login_form fieldset {
-    background-color: beige;
-    max-width: 30rem;
+    max-width: 25rem;
     margin: 0 auto;
     padding: .8rem;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
 }
+.screen_out {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -999px;
+}
+#admin_id, #admin_pwd {
+    width: 100%;
+    padding: .5rem 1rem;
+    margin:  .25rem 0;
+    outline: 0;
+}
+#admin_id:focus, #admin_pwd:focus {
+    border-color: #e42cf5;
+}
+.btn {
+    border: 0;
+    padding: .5rem 1rem;
+}
+.admin_btn {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+
 
 
 .footer {
