@@ -50,7 +50,23 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-res.render('join');
+  res.render('join');
 });
+
+/**
+ * 관리자 로그인 요청
+ * GET /admin
+ */
+router.get('/admin', (req, res) => {
+  const locals = {
+    title: "STMT",
+    header: "관리자 로그인",
+    //res.send('admin login');
+  }
+  res.render("admin/index", {
+    locals: locals,
+    layout: "layouts/common"
+  })
+})
 
 module.exports = router;
