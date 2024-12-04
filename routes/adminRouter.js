@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mainLayout = "../views/layouts/common.ejs"
+const User = require("../models/User.js");
 
 
 /**
