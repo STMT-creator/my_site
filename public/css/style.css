@@ -24,6 +24,17 @@ body {
     color: #333;
 }
 
+form, fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+legend {
+    display: none;
+}
+
+
+/* 공통 스타일 */
 .d-flex {
     display: flex;
 }
@@ -53,6 +64,20 @@ a, a:link {
 .gap-3 {
     gap: 3rem;
 }
+.text_center {
+    text-align: center;
+}
+.text_big {
+    font-size: 1.5rem !important;
+}
+.text_normal {
+    font-size: .8rem;
+}
+.text_small {
+    font-size: .5rem;
+}
+
+
 
 
 /* header */
@@ -90,6 +115,18 @@ a, a:link {
     object-fit: cover;
     margin-top: -20rem;
 }
+.container > h2 {
+    font-size: .725rem;
+    font-weight: normal;
+}
+#admin.login_form fieldset {
+    background-color: beige;
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: .8rem;
+}
+
+
 .footer {
     background-color: var(--third-bg-color);
     padding: 1rem;
