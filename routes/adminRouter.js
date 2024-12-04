@@ -12,14 +12,10 @@ router.get('/admin', (req, res) => {
     const locals = {
       title: "STMT Admin",
       header: "관리자 로그인",
-      //res.send('admin login');
     };
-    // res.render("admin/index", {
-    //   locals: locals,
-    //   layout: "layouts/common"
-    // })
     res.render("admin/index", { locals, layout: mainLayout});
   })
+  
 /**
  * 회원 가입 폼 보기
  * GET /register 
