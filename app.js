@@ -11,6 +11,8 @@ const adminRouter = require("./routes/adminRouter.js")
 connectDB(); // DB 연결 실행
 
 app.use(expressLayouts);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.set('layout', 'layouts/main');
