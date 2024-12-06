@@ -38,6 +38,12 @@ legend {
 .d-flex {
     display: flex;
 }
+.flex-end {
+    justify-content: flex-end;
+}
+.flex-start {
+    justify-content: flex-start;
+}
 ul, ol {
     list-style: none;
     margin: 0;
@@ -150,6 +156,13 @@ a, a:link {
 .admin_btn {
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
+}
+
+.body {
+    flex: 5;
+}
+.ctrl {
+    flex: 1;
 }
 
 
