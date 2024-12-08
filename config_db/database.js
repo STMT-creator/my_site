@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.set('debug', true);
-const connectDB = async () => {
+const connectDB = asyncHandler(async () => {
     try {
         const conn = await mongoose.connect(process.env.MONGODB_URI, {
             authSource: 'admin'
@@ -15,6 +15,6 @@ const connectDB = async () => {
         console.log('==================== DB 연결 에러 ====================')
         console.log('err')
     }
-}
+})
 
 module.exports = connectDB
