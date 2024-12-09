@@ -42,7 +42,7 @@ router.post('/admin', async (req, res) => {
             throw new Error('user account is not found')
         }
 
-        const isValid = bcrypt.compare(admin_pwd, user.user_pwd);
+        const isValid = bcrypt.compare(admin_pwd, user[0].user_pwd);
         console.log(isValid)
         if (!isValid) {
             throw new Error('user password is not matched!')
