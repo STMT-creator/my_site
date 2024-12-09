@@ -2,6 +2,7 @@
 :root {
     --primary-text-color: #505f98;
     --secondary-text-color: #ffffff;
+    --third-text-color: #968a8a;
     --primary-bg-color: #f1f1f1;
     --secondary-bg-color: #111247;
     --third-bg-color: #E7ECFF;
@@ -198,6 +199,9 @@ a, a:link {
 /* home > 최신글 */
 .border-bottom {
     border-bottom: 1px solid #333;
+}
+.post-name :hover {
+    color: var(--primary-text-color);
 }
 
 
