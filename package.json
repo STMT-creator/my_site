@@ -8,14 +8,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "- 데이터 베이스를 활용한 회원가입/로그인/글 쓰기/수정/삭제/조회 기능 구현",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie": "^1.0.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.11.0",
@@ -30,5 +30,6 @@
     "watch": [
       "./"
     ]
-  }
+  },
+  "devDependencies": {}
 }
