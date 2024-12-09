@@ -192,6 +192,10 @@ a, a:link {
 .ctrl {
     flex: 1;
 }
+.admin_signup button {color: var(--secondary-text-color);
+    background-color: var(--secondary-bg-color);
+    width: 4rem;
+    height: 1.3rem;}
 /* header */
 
 
