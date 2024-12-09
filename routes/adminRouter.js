@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.JWT_SECRET; // env 변수 값 가져오기
 const cookieParser = require("cookie-parser");
 const mainLayout = "../views/layouts/common.ejs"
+const adminLayout = "../views/layouts/admin.ejs"
 const User = require("../models/User.js");
 
 
@@ -52,7 +53,7 @@ router.post('/admin', async (req, res) => {
         res.redirect('/allPosts')
     } catch (err) {
         console.log(err)
-    } 
+    }
 })
 
 /**
@@ -64,7 +65,7 @@ router.get('/allPosts', (req, res) => {
         title: "STMT Admin",
         header: "관리 페이지",
     };
-    res.render("admin/allPosts", { locals, layout: mainLayout })
+    res.render("admin/allPosts", { locals, layout: adminLayout })
 })
 // const token = req.cookies.token;
 // if (!token) {
@@ -115,5 +116,15 @@ router.post('/register', async (req, res) => {
 router.post('/find', (req, res) => {
     res.send('이름 또는 이메일정보로 회원 ID/PW 찾기')
 })
+
+/**
+ * 관리자 로그아웃
+ * GET /logout
+ */
+router.get("/logout", (req, res) => {
+    res.clearCookie("x_auth")
+    res.redirect("/")
+})
+
 
 module.exports = router;
