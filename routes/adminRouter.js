@@ -77,7 +77,12 @@ router.get('/allPosts', (req, res) => {
  * GET /register 
  */
 router.get('/register', (req, res) => {
-    res.send('회원 가입 폼을 보여줍니다.')
+    const locals = {
+        title: "Admin Register",
+        header: "회원가입",
+    };
+    res.render("register", { locals, layout: adminLayout })
+    // res.send('회원 가입 폼을 보여줍니다.')
 })
 
 /**
