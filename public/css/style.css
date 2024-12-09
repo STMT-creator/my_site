@@ -168,7 +168,7 @@ a, a:link {
     height: 0;
     left: -999px;
 }
-#admin_id, #admin_pwd {
+#admin_id, #admin_pwd, #admin_pwd2, #admin_nick {
     width: 100%;
     padding: .5rem 1rem;
     margin:  .25rem 0;
