@@ -13,10 +13,7 @@ router.get('/', (req, res) => {
     title: "Beginner STMT",
     header: "Web Developer's Tip/Knowhow",
   };
-  res.render("index", {
-    locals: locals,
-    layout: "layouts/common",
-  });
+  res.render("index", { locals, layout: mainLayout });
 });
 
 
@@ -29,11 +26,10 @@ router.get('/about', (req, res) => {
     title: 'about page',
     header: "Web Developer's Tip/Knowhow"
   };
-  res.render("about", {
-    locals: locals,
-    layout: "layouts/common"
-  })
+  res.render("about", { locals, layout:mainLayout })
 });
+
+
 /**
  * Contact : 작업 요청, 의뢰
  * GET /contact
@@ -43,10 +39,7 @@ router.get('/contact', (req, res) => {
     title: 'contact page',
     header: "Web Developer's Tip/Knowhow"
   };
-  res.render("contact", {
-    locals: locals,
-    layout: "layouts/common"
-  })
+  res.render("contact", { locals, layout:mainLayout })
 });
 
 router.get('/signup', (req, res) => {
