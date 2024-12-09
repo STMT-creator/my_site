@@ -70,6 +70,33 @@ a, a:link {
 .gap-3 {
     gap: 3rem;
 }
+.my-1 {
+    margin-top: 1rem;
+    margin-top: 1rem;
+}
+.my-2 {
+    margin-top: 2rem;
+    margin-top: 2rem;
+}
+.my-3 {
+    margin-top: 3rem;
+    margin-top: 3rem;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-2 {
+    flex: 2;
+}
+.flex-3 {
+    flex: 3;
+}
+.flex-4 {
+    flex: 4;
+}
+.flex-5 {
+    flex: 5;
+}
 .text_center {
     text-align: center;
 }
@@ -85,7 +112,7 @@ a, a:link {
 .link-text:hover {
     color: var(--primary-text-color);
 }
-
+/* 공통 스타일 */
 
 
 /* header */
@@ -164,9 +191,23 @@ a, a:link {
 .ctrl {
     flex: 1;
 }
+/* header */
 
 
 
+/* home > 최신글 */
+.border-bottom {
+    border-bottom: 1px solid #333;
+}
+
+
+
+
+/* home > 최신글 */
+
+
+
+/* footer */
 .footer {
     background-color: var(--third-bg-color);
     padding: 1rem;
@@ -191,3 +232,4 @@ a, a:link {
     padding: 2rem;
     font-size: .7rem;
 }
+/* footer */
