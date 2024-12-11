@@ -3,9 +3,10 @@
     --primary-text-color: #505f98;
     --secondary-text-color: #ffffff;
     --third-text-color: #968a8a;
-    --primary-bg-color: #f1f1f1;
+    --primary-bg-color: #e6dddd;
     --secondary-bg-color: #111247;
-    --third-bg-color: #E7ECFF;
+    --third-bg-color: #b6c4f5;
+    --fourth-bg-color: #000000;   
 }
 
 *,
@@ -73,15 +74,24 @@ a, a:link {
 }
 .my-1 {
     margin-top: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .my-2 {
     margin-top: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .my-3 {
     margin-top: 3rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.p-1 {
+    padding: 1rem;
+}
+.p-2 {
+    padding: 2rem;
+}
+.p-3 {
+    padding: 3rem;
 }
 .flex-1 {
     flex: 1;
@@ -112,6 +122,9 @@ a, a:link {
 }
 .link-text:hover {
     color: var(--primary-text-color);
+}
+.bg-light {
+    background-color: var(--primary-bg-color);
 }
 /* 공통 스타일 */
 
@@ -181,6 +194,17 @@ a, a:link {
     border: 0;
     padding: .5rem 1rem;
 }
+.btn-light {
+    background-color: var(--secondary-text-color);
+}
+.btn-dark {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+.btn-top {
+    background-color: var(--fourth-bg-color);
+    color: var(--secondary-text-color);
+}
 .admin_btn {
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
@@ -207,7 +231,11 @@ a, a:link {
 .post-name :hover {
     color: var(--primary-text-color);
 }
-
+.article-body li::before {
+    /* list-style: disc; */
+    /* content: '\003e'; */
+    content: '\318d';
+}
 
 
 
