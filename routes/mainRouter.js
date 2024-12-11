@@ -24,8 +24,14 @@ router.get('/', async (req, res) => {
  * 라우트 파라미터(=매개변수) 끝에 작성
  */
 router.get('/posts/:id', async (req, res) => {
+  const locals = {
+    title: 'My Site',
+    header: '사이트 소개'
+  }
+
   const data = await Post.findById(req.params.id)
-  res.status(200).send(data)
+  
+  res.render("post", {data, locals, layout:mainLayout})
 });
 
 
