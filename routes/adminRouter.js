@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const mainLayout = "../views/layouts/common.ejs"
 const adminLayout = "../views/layouts/admin.ejs"
 const User = require("../models/User.js");
+const Post = require('../models/Post.js');
 
 
 /**
@@ -60,12 +61,13 @@ router.post('/admin', async (req, res) => {
  * 관리자 전용 페이지 : 작성한 게시물 목록 화면 + 로그아웃 [버튼]
  * GET /allPosts
 */
-router.get('/allPosts', (req, res) => {
-    const locals = {
-        title: "STMT Admin",
-        header: "관리 페이지",
-    };
-    res.render("admin/allPosts", { locals, layout: adminLayout })
+router.get("/allPosts", async (req, res) => {
+
+    const data = await Post.find().sort({createdAt: -1});
+
+    const len = data.length;
+
+    res.render("admin/allPosts", { data, len, layout: adminLayout })
 })
 // const token = req.cookies.token;
 // if (!token) {
@@ -120,6 +122,32 @@ router.post('/register', async (req, res) => {
 */
 router.post('/find', (req, res) => {
     res.send('이름 또는 이메일정보로 회원 ID/PW 찾기')
+})
+
+/**
+ * 관리자 글쓰기 - Admin post
+ * Get /add
+ */
+router.get('/add', (req, res) => {
+    const locals = {
+        title: '글쓰기'
+    }
+    res.render("admin/add", {locals, layout:adminLayout})
+})
+
+/**
+ * 관리자 글쓰기 - Admin post
+ * Post /add
+ * DB에 Post 데이터 등록 : Post 모델이 필요.
+ */
+router.post('/add', async (req, res) => {
+    const {title, content} = req.body;
+    const newPost = new Post({
+        title: title,
+        content: content
+    })
+    await newPost.save(newPost);
+    res.redirect('/allPosts');
 })
 
 /**
