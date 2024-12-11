@@ -9,7 +9,7 @@ const Post = require("../models/Post.js");
  * 첫 페이지 : index router
  * GET / or /home
  */
-router.get('/', async (req, res) => {
+router.get(['/','/home'], async (req, res) => {
   const locals = {
     title: "Beginner STMT",
     header: "Web Developer's Tip/Knowhow",
