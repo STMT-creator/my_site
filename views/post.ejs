@@ -1,16 +1,24 @@
 <div class="article">
     <div class="article-header">
-        <p class="text-big"><%= data.title %></p>
-        <p class="text-small"><%= data.createdAt %></p>
+        <p class="text_big"><%= data.title %></p>
+        <p class="text_small"><%= data.createdAt %></p>
     </div>
 
     <hr class="my-1">
 
     <div class="article-main bg-light p-1">
-        <p class="text-normal"><%= data.content %></p>
+        <p class="text-normal" id="content"><%= data.content %></p>
     </div>
     <div class="article-footer my-1">
-        <button type="button" class="btn btn-dark">목록</button>
-        <button type="button" class="btn btn-top">맨 위로</button>
+        <button type="button" class="btn btn-dark" id="list-btn">목록</button>
+        <button type="button" class="btn btn-top" id="top-btn">맨 위로</button>
     </div>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const listBtn = document.querySelector("#list-btn");
+            listBtn.addEventListener("click", () => {
+                location.href = '/home';
+            })
+        })
+    </script>
 </div>
