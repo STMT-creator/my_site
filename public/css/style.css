@@ -6,7 +6,10 @@
     --primary-bg-color: #e6dddd;
     --secondary-bg-color: #111247;
     --third-bg-color: #b6c4f5;
-    --fourth-bg-color: #000000;   
+    --fourth-bg-color: #000000; 
+    --delete-bg-color: #e22b2bdd;  
+    --modify-bg-color: #92ee92;
+    --write-bg-color: #d8d8d8;
 }
 
 *,
@@ -33,6 +36,9 @@ form, fieldset {
 }
 legend {
     display: none;
+}
+textarea {
+    resize: none;
 }
 
 
@@ -63,6 +69,9 @@ a, a:link {
 .align-center {
     align-items: center;
 }
+.gap-0 {
+    gap: .5rem;
+}
 .gap-1 {
     gap: 1rem;
 }
@@ -71,6 +80,17 @@ a, a:link {
 }
 .gap-3 {
     gap: 3rem;
+}
+.mx-half {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+.mr-1 {
+    margin-right: 1rem;
+}
+.my-0 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 .my-1 {
     margin-top: 1rem;
@@ -84,6 +104,12 @@ a, a:link {
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
+.p-quater {
+    padding: .25rem;
+}
+.p-half {
+    padding: .5rem;
+}
 .p-1 {
     padding: 1rem;
 }
@@ -92,6 +118,18 @@ a, a:link {
 }
 .p-3 {
     padding: 3rem;
+}
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.py-2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.py-3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 .flex-1 {
     flex: 1;
@@ -120,6 +158,9 @@ a, a:link {
 .text_small {
     font-size: .5rem;
 }
+.text_bold {
+    font-weight: bold;
+}
 .link-text:hover {
     color: var(--primary-text-color);
 }
@@ -132,7 +173,7 @@ a, a:link {
 /* header */
 .header {
     padding: 1rem;
-    border-bottom: 1px solid #ffbfbf;
+    /* border-bottom: 1px solid #ffbfbf; */
     color: var(--primary-text-color);
 }
 
@@ -194,6 +235,16 @@ a, a:link {
     border: 0;
     padding: .5rem 1rem;
 }
+.btn-modify {
+    background-color: var(--modify-bg-color);
+}
+.btn-delete {
+    background-color: var(--delete-bg-color);
+    color: #ffffff;
+}
+.btn-write {
+    background-color: var(--write-bg-color);
+}
 .btn-light {
     background-color: var(--secondary-text-color);
 }
@@ -236,7 +287,6 @@ a, a:link {
     /* content: '\003e'; */
     content: '\318d';
 }
-
 
 
 /* home > 최신글 */
