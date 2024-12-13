@@ -10,6 +10,9 @@
             </li>
         </ul>
         <ul class="article-body">
+            <% if (data.length == 0) {%>
+                <p class="text_center my-1 text_normal">새 글을 등록해주세요.</p>
+                <% } else { %>
             <% data.forEach(post=> { %>
                 <li class="d-flex my-1 post-name">
                     <span class="flex-4 post-title">
@@ -24,6 +27,7 @@
                     </span>
                 </li>
             <% }) %>
+            <% } %>
         </ul>
     </div>
 </div>
