@@ -63,7 +63,7 @@ router.post('/admin', async (req, res) => {
 */
 router.get("/allPosts", async (req, res) => {
 
-    const data = await Post.find().sort({createdAt: -1});
+    const data = await Post.find().sort({ createdAt: -1 });
 
     const len = data.length;
 
@@ -132,7 +132,7 @@ router.get('/add', (req, res) => {
     const locals = {
         title: '글쓰기'
     }
-    res.render("admin/add", {locals, layout:adminLayout})
+    res.render("admin/add", { locals, layout: adminLayout })
 })
 
 /**
@@ -141,7 +141,7 @@ router.get('/add', (req, res) => {
  * DB에 Post 데이터 등록 : Post 모델이 필요.
  */
 router.post('/add', async (req, res) => {
-    const {title, content} = req.body;
+    const { title, content } = req.body;
     const newPost = new Post({
         title: title,
         content: content
@@ -149,6 +149,21 @@ router.post('/add', async (req, res) => {
     await newPost.save(newPost);
     res.redirect('/allPosts');
 })
+
+/**
+ * 관리자 글 수정 - Admin Edit Post
+ * Get /eidt/:id or /modify:id
+ * 특정 게시물에 대한 제목/내용 수정
+ */
+router.get("/edit/:id", async (req, res) => {
+    const locals = {
+        title: '게시글 편집'
+    }
+    const data = await Post.findById(req.params.id)
+    console.log(data)
+    res.render("admin/edit", { locals, layout: adminLayout, data })
+})
+
 
 /**
  * 관리자 로그아웃
