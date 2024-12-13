@@ -1,7 +1,7 @@
 <div class="form-ui">
     <h2><%= locals.title %></h2>
     <hr class="my-1">
-    <form action="/edit" method="post" id="edit_form">
+    <form action="/edit/<%= data._id %>?_method=put" method="post" id="edit_form">
         <div class="d-flex my-1">
             <label for="title" class="flex-1 text_center text_bold">제목</label>
             <input type="text" name="title" id="title" class="flex-4 p-quater" value="<%= data.title %>">
@@ -12,7 +12,15 @@
         </div>
         <div class="d-flex flex-end mx-half gap-0">
             <input type="submit" value="수정" class="btn btn-modify">
-            <input type="reset" value="취소" class="btn btn-delete">
+            <input type="reset" value="취소" class="btn btn-delete" id="cancel">
         </div>
     </form>
 </div>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const cancelBtn = document.querySelector("#cancel");
+        cancelBtn = addEventListener("click", () => {
+            location.href="/allPosts"
+        })
+    })
+</script>
