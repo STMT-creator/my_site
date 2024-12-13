@@ -159,7 +159,8 @@ router.get("/edit/:id", async (req, res) => {
     const locals = {
         title : "게시글 수정"
     }
-    const data = await Post.findById(req.params.id);
+    const real_id = await Post.findOne({uuid: req.params.id});
+    const data = await Post.findById(real_id);
     res.render("admin/edit", {locals, data, layout: adminLayout})
 })
 
@@ -170,8 +171,9 @@ router.get("/edit/:id", async (req, res) => {
  * 특정 게시물에 대한 제목/내용 업데이트
  */
 router.put("/edit/:id", async (req, res) => {
+    const edit_id = await Post.findOne({uuid: req.params.id});
     const { title, content } = req.body;
-    const data = await Post.findByIdAndUpdate(req.params.id, { title, content });
+    const data = await Post.findByIdAndUpdate(edit_id, { title, content });
     res.redirect("/allPosts");
 })
 
@@ -181,7 +183,8 @@ router.put("/edit/:id", async (req, res) => {
  * 특정 게시글에 대한 삭제 요청
  */
 router.get("/remove/:id", async (req, res) => {
-    const data = await Post.findByIdAndDelete({_id: req.params.id});
+    const delete_id = await Post.findOne({uuid: req.params.id})
+    const data = await Post.findByIdAndDelete(delete_id);
     res.redirect("/allPosts");
 })
 
