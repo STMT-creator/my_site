@@ -1,4 +1,5 @@
 const express = require('express')
+const methodOverride = require("method-override")
 const app = express()
 const port = 3000
 const path = require('path')
@@ -14,6 +15,7 @@ connectDB(); // DB 연결 실행
 app.use(expressLayouts);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 app.use(cookieParser())
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
