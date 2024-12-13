@@ -15,7 +15,7 @@
         <% data.forEach(post=> { %>
             <li class="d-flex space-between align-center my-1">
                 <div class="body d-flex flex-4 space-between align-center">
-                    <p class="title"><a href="/edit/<%= post._id %>"><%= post.title %></a></p>
+                    <p class="title"><a href="/edit/<%= post.uuid %>"><%= post.title %></a></p>
                     <p class="wr_date mr-1 text-small">
                         <%= post.updatedAt.toLocaleString('ko-kr', { 
                             year: '2-digit' , month: '2-digit' ,
@@ -23,8 +23,8 @@
                     </p>
                 </div>
                 <div class="ctrl flex-1 p-half">
-                    <a href="/edit/<%= post._id %>" class="btn btn-modify"><i class="fa-solid fa-pen-to-square" title="수정하기"></i></a>
-                    <a href="/remove/<%= post._id %>" class="btn btn-delete"><i class="fa-solid fa-delete-left" title="삭제하기"></i></a>
+                    <a href="/edit/<%= post.uuid %>" class="btn btn-modify"><i class="fa-solid fa-pen-to-square" title="수정하기"></i></a>
+                    <a href="/remove/<%= post.uuid %>" class="btn btn-delete"><i class="fa-solid fa-delete-left" title="삭제하기"></i></a>
                 </div>
             </li>
         <% }) %>
