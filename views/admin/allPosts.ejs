@@ -1,7 +1,7 @@
 <h2 class="text-big">All Posts</h2>
 <div class="header d-flex space-between align-center">
     <span class="text-normal">Total : <%= len %> </span>
-    <button class="btn btn-write" id="add">글쓰기</button>
+    <button class="btn-write" name="add" id="add"><i class="fa-solid fa-plus" title="새글쓰기"></i></button>
 </div>
 <div class="article-header d-flex box-header">
     <p class="flex-5 text-center">제목</p>
@@ -9,23 +9,26 @@
     <p class="flex-1 text-center">관리</p>
 </div>
 <ul class="article-body">
-    <% data.forEach(post=> { %>
-        <li class="d-flex space-between align-center my-1">
-            <div class="body d-flex flex-4 space-between align-center">
-                <p class="title"><a href="#">
-                        <%= post.title %>
-                    </a></p>
-                <p class="wr_date mr-1 text-small">
-                    <%= post.createdAt.toLocaleString('ko-kr', { year: '2-digit' , month: '2-digit' , day: '2-digit'
-                        }).replace(/\./g, '' ).replaceAll(' ',' /') %>
-                </p>
-            </div>
-            <div class="ctrl flex-1 p-half">
-                <a href="/edit/<%= post.id %>" class="btn btn-modify">수정</a>
-                <a href="/delete/<%= post.id %>" class="btn btn-delete">삭제</a>
-            </div>
-        </li>
+    <% if (data.length == 0) {%>
+    <p class="text_center my-1 text_normal">새 글을 등록해주세요.</p>
+    <% } else { %>
+        <% data.forEach(post=> { %>
+            <li class="d-flex space-between align-center my-1">
+                <div class="body d-flex flex-4 space-between align-center">
+                    <p class="title"><a href="/edit/<%= post._id %>"><%= post.title %></a></p>
+                    <p class="wr_date mr-1 text-small">
+                        <%= post.updatedAt.toLocaleString('ko-kr', { 
+                            year: '2-digit' , month: '2-digit' ,
+                            day: '2-digit' }).replace(/\./g, '' ).replaceAll(' ',' /') %>
+                    </p>
+                </div>
+                <div class="ctrl flex-1 p-half">
+                    <a href="/edit/<%= post._id %>" class="btn btn-modify"><i class="fa-solid fa-pen-to-square" title="수정하기"></i></a>
+                    <a href="/remove/<%= post._id %>" class="btn btn-delete"><i class="fa-solid fa-delete-left" title="삭제하기"></i></a>
+                </div>
+            </li>
         <% }) %>
+    <% } %>
 </ul>
 <script>
     window.addEventListener("DOMContentLoaded", () => {
