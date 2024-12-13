@@ -246,6 +246,12 @@ a, a:link {
 }
 .btn-write {
     background-color: var(--write-bg-color);
+    border-radius: 60%;
+    width: 40px;
+    height: 40px;
+}
+.btn_write {
+    background-color: var(--write-bg-color);
 }
 .btn-light {
     background-color: var(--secondary-text-color);
