@@ -122,6 +122,7 @@ a, a:link {
 .py-1 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    overflow: hidden;
 }
 .py-2 {
     padding-top: 2rem;
@@ -234,13 +235,14 @@ a, a:link {
 .btn {
     border: 0;
     padding: .5rem 1rem;
+    overflow: hidden;
 }
 .btn-modify {
     background-color: var(--modify-bg-color);
 }
 .btn-delete {
     background-color: var(--delete-bg-color);
-    color: #ffffff;
+    color: #ffffff !important;
 }
 .btn-write {
     background-color: var(--write-bg-color);
