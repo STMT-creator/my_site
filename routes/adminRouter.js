@@ -151,19 +151,39 @@ router.post('/add', async (req, res) => {
 })
 
 /**
- * 관리자 글 수정 - Admin Edit Post
- * Get /eidt/:id or /modify:id
- * 특정 게시물에 대한 제목/내용 수정
+ * 관리자 글 수정 - Admin PUT Post
+ * PUT /edit/:id or /modify:id
+ * 특정 게시물에 대한 제목/내용 업데이트
  */
 router.get("/edit/:id", async (req, res) => {
     const locals = {
-        title: '게시글 편집'
+        title : "게시글 수정"
     }
-    const data = await Post.findById(req.params.id)
-    console.log(data)
-    res.render("admin/edit", { locals, layout: adminLayout, data })
+    const data = await Post.findById(req.params.id);
+    res.render("admin/edit", {locals, data, layout: adminLayout})
 })
 
+
+/**
+ * 관리자 글 수정 - Admin PUT Post
+ * PUT /edit/:id or /modify:id
+ * 특정 게시물에 대한 제목/내용 업데이트
+ */
+router.put("/edit/:id", async (req, res) => {
+    const { title, content } = req.body;
+    const data = await Post.findByIdAndUpdate(req.params.id, { title, content });
+    res.redirect("/allPosts");
+})
+
+/**
+ * 관리자 글 삭제 - Admin DELETE Post
+ * Delete /delete/:id => form 에서 삭제요청을 한다
+ * 특정 게시글에 대한 삭제 요청
+ */
+router.get("/remove/:id", async (req, res) => {
+    const data = await Post.findByIdAndDelete({_id: req.params.id});
+    res.redirect("/allPosts");
+})
 
 /**
  * 관리자 로그아웃
